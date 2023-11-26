@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+// import UseReduce2 from './UseReduce2'
+// import Axios from './Axios'
+import Child from './Child'
+import {Provider} from 'react-redux'
+import store from './Redux/Store'
+import TodoTask from './TodoTask'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {/* // <UseReduce2></UseReduce2> */}
+      {/* <Axios/> */}
+       
+
+       {/* //provider is the acessibility to the store if we wrap outside the provider we cannot access store inside any component which is outside of the provider */}
+      <Provider store={store}>
+        <Child/>
+        <TodoTask/>
+      </Provider>
+
+      
+      </>
+  )
 }
 
-export default App;
+export default App
